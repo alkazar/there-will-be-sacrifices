@@ -1,0 +1,188 @@
+[
+	{
+		"description": "Your product was found defective. Do you initiate a recall?",
+		"yes" : {
+			"health"      :  0,
+			"family"      :  0,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    : -3,
+			"employees"   : -2,
+			"customers"   : -1,
+			"investors"   : -3,
+			"creditors"   :  0,
+			"regulators"  :  1,
+			"journalists" : -1,
+			"roberto"     :  0
+		},
+		"no" : {
+			"health"      :  0,
+			"family"      :  0,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    : -2,
+			"employees"   : -1,
+			"customers"   : -3,
+			"investors"   : -2,
+			"creditors"   :  0,
+			"regulators"  : -3,
+			"journalists" :  2,
+			"roberto"     : -1
+		}
+	},
+	{
+		"description": "Roberto the hobo asks for some change, do you give him some?",
+		"yes" : {
+			"health"      :  0,
+			"family"      :  0,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    : -1,
+			"employees"   : -1,
+			"customers"   : -1,
+			"investors"   : -1,
+			"creditors"   :  0,
+			"regulators"  :  0,
+			"journalists" :  0,
+			"roberto"     :  2
+		},
+		"no" : {
+			"health"      :  0,
+			"family"      :  0,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    :  0,
+			"employees"   :  1,
+			"customers"   :  0,
+			"investors"   :  0,
+			"creditors"   :  0,
+			"regulators"  :  0,
+			"journalists" :  0,
+			"roberto"     : -9
+		}
+	},
+	{
+		"description": "An opportunity to outsource some jobs has come up, do you take it?",
+		"yes" : {
+			"health"      :  0,
+			"family"      :  0,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    :  2,
+			"employees"   : -3,
+			"customers"   : -1,
+			"investors"   :  2,
+			"creditors"   :  1,
+			"regulators"  : -2,
+			"journalists" :  1,
+			"roberto"     : -3
+		},
+		"no" : {
+			"health"      :  0,
+			"family"      :  0,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    : -2,
+			"employees"   :  1,
+			"customers"   :  1,
+			"investors"   : -1,
+			"creditors"   :  0,
+			"regulators"  :  1,
+			"journalists" : -1,
+			"roberto"     :  2
+		}
+	},
+	{
+		"description": "An accounting error is discovered. Do you cover it up?",
+		"yes" : {
+			"health"      : -3,
+			"family"      : -2,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    :  0,
+			"employees"   : -2,
+			"customers"   : -2,
+			"investors"   :  1,
+			"creditors"   :  1,
+			"regulators"  : -5,
+			"journalists" :  5,
+			"roberto"     : -5
+		},
+		"no" : {
+			"health"      :  0,
+			"family"      :  2,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    : -5,
+			"employees"   :  2,
+			"customers"   : -1,
+			"investors"   : -5,
+			"creditors"   : -2,
+			"regulators"  :  3,
+			"journalists" :  0,
+			"roberto"     :  2
+		}
+	},
+	{
+		"description": "Things are going well. Do you give employees a bonus?",
+		"yes" : {
+			"health"      :  0,
+			"family"      : -1,
+			"mistress"    : -1,
+			"dog"         : -1,
+			"finances"    : -5,
+			"employees"   :  5,
+			"customers"   : -1,
+			"investors"   : -2,
+			"creditors"   : -1,
+			"regulators"  :  0,
+			"journalists" :  1,
+			"roberto"     :  1
+		},
+		"no" : {
+			"health"      : -2,
+			"family"      :  1,
+			"mistress"    :  1,
+			"dog"         :  1,
+			"finances"    :  9,
+			"employees"   : -9,
+			"customers"   : -1,
+			"investors"   :  2,
+			"creditors"   :  2,
+			"regulators"  :  0,
+			"journalists" :  0,
+			"roberto"     : -3
+		}
+	},
+	{
+		"description": "A local news outlet wants to do a piece on you and your family. Do you do it?",
+		"yes" : {
+			"health"      : -1,
+			"family"      : -1,
+			"mistress"    : -1,
+			"dog"         : -1,
+			"finances"    : -1,
+			"employees"   :  2,
+			"customers"   :  2,
+			"investors"   :  2,
+			"creditors"   :  1,
+			"regulators"  : -1,
+			"journalists" :  5,
+			"roberto"     : -2
+		},
+		"no" : {
+			"health"      :  0,
+			"family"      :  1,
+			"mistress"    :  0,
+			"dog"         :  0,
+			"finances"    :  0,
+			"employees"   :  0,
+			"customers"   :  0,
+			"investors"   :  0,
+			"creditors"   :  0,
+			"regulators"  :  0,
+			"journalists" : -5,
+			"roberto"     :  0
+		}
+	}
+]
