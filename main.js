@@ -21,6 +21,7 @@ const STATS = {
 
 let currentCard = null
 let selection   = 'yes'
+let gameOver    = null
 
 
 const PG = playground({
@@ -37,7 +38,7 @@ const PG = playground({
   },
 
   step : function(dt) {
-	if (!currentCard) {
+	if (!currentCard && !gameOver) {
 		currentCard = getRandomCard()
 	}
   },
@@ -74,6 +75,16 @@ const PG = playground({
 			else
 				PG.layer.fillRect(600, 676, 32, 5)
 		}
+		else if (gameOver === 'win') {
+			print('you win!', 600, 500, '#0f0')
+		}
+		else if (gameOver === 'lose') {
+			print('you lose!', 600, 500, '#f00')
+		}
+
+		if (gameOver) {
+			print('press space/enter to play again', 420, 560, '#666')
+		}
 	}
   },
 
@@ -82,15 +93,41 @@ const PG = playground({
     if (event.key === 'right') selection = 'no'
 	if (event.key === 'space' || event.key === 'enter') {
 
+		if (gameOver) {
+			initGame();
+		}
+
 		// apply card
 		for (const stat in currentCard[selection]) {
 			STATS[stat] += currentCard[selection][stat];
+
+			// check win/lose condition
+			if (STATS[stat] <= 0) {
+				STATS[stat] = 0
+				gameOver = 'lose'
+			}
+
+			if (STATS[stat] >= 100) {
+				STATS[stat] = 100
+
+				if (gameOver != 'lose')
+					gameOver = 'win'
+			}
 		}
 
 		currentCard = null;
 	}
   }
 })
+
+function initGame() {
+	for (const stat in STATS) {
+		STATS[stat] = 50;
+	}
+
+	currentCard = null
+	gameOver    = null
+}
 
 function getRandomCard() {
 	if (!PG.data.cards) {
