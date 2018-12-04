@@ -8,9 +8,9 @@ const GRAPH_FREQ = 2
 
 const BARS = {
 	profits      : { value :   0, rate :  1, multipliers : [] },
-	family       : { value : 800, rate : -2, multipliers : [] },
-	reputation   : { value : 800, rate : -2, multipliers : [] },
-	productivity : { value : 800, rate : -2, multipliers : [] },
+	family       : { value : 800, rate : -1, multipliers : [] },
+	reputation   : { value : 800, rate : -1, multipliers : [] },
+	productivity : { value : 800, rate : -1, multipliers : [] },
 }
 
 const barsArray = Object.keys(BARS)
@@ -83,6 +83,8 @@ let cooldown = 0
 let time = 0
 
 let gameOver = null
+
+let lastBarMult = 1
 
 
 function getAndUpdateMultiplier(bar, dt) {
@@ -177,8 +179,22 @@ const PG = playground({
 	if (cooldown < 0)
 		cooldown = 0
 
+	let posBarMult =  1
+	let negBarMult = -1
+
 	for(const bar of Object.keys(BARS)) {
-		const mult = getAndUpdateMultiplier(bar, dt)
+		let  mult = getAndUpdateMultiplier(bar, dt)
+
+		if (bar === 'profits') {
+			mult += lastBarMult
+		} else {
+			const barMult = ((BARS[bar].value / 1000) * 6) - 3
+			if (barMult < 0)
+				negBarMult *= Math.abs(barMult)
+			else
+				posBarMult *= barMult
+		}
+
 		let rate = BARS[bar].rate * mult * dt * (1 + Math.random()*5)
 
 		if (rate > 50 * dt)
@@ -216,6 +232,8 @@ const PG = playground({
 			}
 		}
 	}
+
+	lastBarMult = posBarMult + negBarMult
   },
 
   render : function() {
